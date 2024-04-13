@@ -1,4 +1,4 @@
-rpipeline {
+pipeline {
     agent { 
         node {
             label 'built-in'
@@ -12,7 +12,7 @@ rpipeline {
             steps {
                 echo "Building.."
                 sh '''
-                echo "a"
+                docker build -t dockerfile
                 '''
             }
         }
