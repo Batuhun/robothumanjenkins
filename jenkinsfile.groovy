@@ -12,7 +12,7 @@ rpipeline {
             steps {
                 echo "Building.."
                 sh '''
-                echo "docker build -t dockerfile ."
+                echo "a"
                 '''
             }
         }
