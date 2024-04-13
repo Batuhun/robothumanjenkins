@@ -1,4 +1,4 @@
-pipeline {
+hopipeline {
     agent { 
         node {
             label 'agent1'
@@ -12,7 +12,7 @@ pipeline {
             steps {
                 echo "Building.."
                 sh '''
-                dir
+                echo "dir"
                 '''
             }
         }
