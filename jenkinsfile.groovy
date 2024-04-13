@@ -12,7 +12,7 @@ pipeline {
             steps {
                 echo "Building.."
                 sh '''
-                docker build -t yolo .
+                sudo systemctl status docker
                 '''
             }
         }
