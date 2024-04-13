@@ -1,4 +1,4 @@
-pipeline {
+rpipeline {
     agent { 
         node {
             label 'built-in'
@@ -12,7 +12,7 @@ pipeline {
             steps {
                 echo "Building.."
                 sh '''
-                echo "doing build stuff.."
+                docker build -t Docker .
                 '''
             }
         }
