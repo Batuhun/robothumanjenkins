@@ -1,4 +1,4 @@
-hopipeline {
+pipeline {
     agent { 
         node {
             label 'agent1'
