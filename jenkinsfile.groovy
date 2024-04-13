@@ -12,7 +12,7 @@ pipeline {
             steps {
                 echo "Building.."
                 sh '''
-                docker build -t yolo
+                docker build -t yolo .
                 '''
             }
         }
