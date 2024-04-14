@@ -8,11 +8,20 @@ pipeline {
             pollSCM '* * * * *'
     }
     stages {
+        stage('Install Docker and Python') {
+            steps {
+                    // Install Docker
+                    sh 'apt-get update && sudo apt-get install -y docker.io'
+
+                    // Install Python
+                    sh 'apt-get install -y python3'
+            }
+        }
         stage('Build') {
             steps {
                 echo "Building.."
                 sh '''
-                sudo systemctl status docker
+                docker
                 '''
             }
         }
