@@ -6,14 +6,6 @@ pipeline {
             pollSCM '* * * * *'
     }
     stages {
-        stage('Install Docker and Python') {
-            steps {
-                    // Install Docker
-                    sh 'sudo apk update && sudo apk add docker'
-
-                    // Install Python
-                    sh 'sudo apk add python3'
-            }
         }
         stage('Build') {
             steps {
