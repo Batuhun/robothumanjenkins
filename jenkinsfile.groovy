@@ -1,7 +1,8 @@
 pipeline {
     agent { 
-        dockerfile true
-      }
+        node {
+            label 'agent1'
+            }
     triggers {
             pollSCM '* * * * *'
     }
@@ -10,7 +11,7 @@ pipeline {
             steps {
                 echo "Building.."
                 sh '''
-                echo "docker"
+                ls -la
                 '''
             }
         }
