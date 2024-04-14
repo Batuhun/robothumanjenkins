@@ -38,6 +38,17 @@ RUN pip install --no-cache numpy==1.23.5
 # Remove exported models
 RUN rm -rf tmp
 
+# Telepítse a Docker-t
+RUN apt-get update && \
+    apt-get install -y docker.io
+
+# Törölje a cache-t és végezze el a felesleges fájlok takarítását
+RUN apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+# Tesztelje a Docker telepítését
+RUN docker --version
+
 # Set environment variables
 ENV OMP_NUM_THREADS=1
 # Avoid DDP error "MKL_THREADING_LAYER=INTEL is incompatible with libgomp.so.1 library" https://github.com/pytorch/pytorch/issues/37377
