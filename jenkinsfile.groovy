@@ -11,10 +11,10 @@ pipeline {
         stage('Install Docker and Python') {
             steps {
                     // Install Docker
-                    sh 'apt-get update && sudo apt-get install -y docker.io'
+                    sh 'apk update && sudo apk add docker'
 
                     // Install Python
-                    sh 'apt-get install -y python3'
+                    sh 'apk add python3'
             }
         }
         stage('Build') {
