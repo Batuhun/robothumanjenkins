@@ -10,7 +10,7 @@ pipeline {
             steps {
                 echo "Building.."
                 sh '''
-                docker
+                echo "docker"
                 '''
             }
         }
