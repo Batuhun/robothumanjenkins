@@ -10,8 +10,8 @@ pipeline {
             steps {
                 echo "Building.."
                 sh '''
-                pip install ultralytics
-                pip install roboflow
+                pip install ultralytics --user
+                pip install roboflow --user
                 '''
             }
         }
