@@ -14,6 +14,12 @@ try:
 except:
     print('error unzipping')
 
+os.listdir("/var/jenkins_home/workspace/RobotHumanYOLOv8@2/robot-human-detection-1")
+print('\n')
+os.listdir("/var/jenkins_home/workspace/RobotHumanYOLOv8@2/")
+print('\n')
+os.listdir("/var/jenkins_home/")
+
 filename = "/var/jenkins_home/workspace/RobotHumanYOLOv8@2/robot-human-detection-1/data.yaml"
 with open(filename, "r") as f:
     lines = f.readlines()
