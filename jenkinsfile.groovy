@@ -22,7 +22,7 @@ pipeline {
             steps {
                 echo "Testing.."
                 sh '''
-                echo "doing test stuff.."
+                python3 training.py
                 '''
             }
         }
