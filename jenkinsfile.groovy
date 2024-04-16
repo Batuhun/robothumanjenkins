@@ -10,7 +10,8 @@ pipeline {
             steps {
                 echo "Building.."
                 sh '''
-                ls -la
+                pip install ultralytics
+                pip install roboflow
                 '''
             }
         }
