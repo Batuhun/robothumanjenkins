@@ -1,6 +1,9 @@
 pipeline {
     agent {
-        docker { image 'python:3.10-slim' }
+        docker {
+            image 'python:3.10-slim' 
+            args '-u root:root'
+        }
     }
     triggers {
             pollSCM '* * * * *'
@@ -10,8 +13,8 @@ pipeline {
             steps {
                 echo "Building.."
                 sh '''
-                pip install ultralytics --user
-                pip install roboflow --user
+                pip install ultralytics 
+                pip install roboflow 
                 '''
             }
         }
