@@ -1,12 +1,18 @@
 from ultralytics import YOLO
 from roboflow import Roboflow
 import os
+import zipfile
 
 rf = Roboflow(api_key="tcoKTgvDJQbxwi8pIzeg")
 project = rf.workspace("robot-human-detection").project("robot-human-detection")
 version = project.version(1)
 dataset = version.download("yolov8")
 
+try:
+    with zipfile.ZipFile('/var/jenkins_home/workspace/RobotHumanYOLOv8@2/robot-human-detection-1/roboflow.zip', 'r') as zip_ref:
+        zip_ref.extractall('/var/jenkins_home/workspace/RobotHumanYOLOv8@2/robot-human-detection-1')
+except:
+    print('error unzipping')
 
 filename = "/var/jenkins_home/workspace/RobotHumanYOLOv8@2/robot-human-detection-1/data.yaml"
 with open(filename, "r") as f:
