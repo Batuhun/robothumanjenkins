@@ -13,7 +13,7 @@ pipeline {
             steps {
                 echo "Building.."
                 sh '''
-                pip install ultralytics 
+                pip install ultralytics==8.0.196
                 pip install roboflow 
                 '''
             }
