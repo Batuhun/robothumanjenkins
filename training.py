@@ -31,9 +31,7 @@ with open(filename, "w") as f:
             f.write('val: valid/images\n')
         else:
           f.write(line)
-f = open("/content/robot-human-detection-1/data.yaml", "r")
-print('----------\n')
-print(f.read())
+
 
 model = YOLO("yolov8l.yaml")  # build a new model from scratch
 model = YOLO("yolov8l.pt")  # load a pretrained model (recommended for training)
