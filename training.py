@@ -19,8 +19,8 @@ print('\n')
 print(os.listdir("/var/jenkins_home/workspace/RobotHumanYOLOv8/"))
 print('\n')
 #os.listdir("/var/jenkins_home/RobotHumanYOLOv8@2/robot-human-detection-1")
-'''
-filename = "/var/jenkins_home/workspace/RobotHumanYOLOv8@2/robot-human-detection-1/data.yaml"
+
+filename = "/var/jenkins_home/workspace/RobotHumanYOLOv8/robot-human-detection-1/data.yaml"
 with open(filename, "r") as f:
     lines = f.readlines()
 with open(filename, "w") as f:
@@ -40,4 +40,4 @@ model = YOLO("yolov8l.pt")  # load a pretrained model (recommended for training)
 
 # Use the model
 model.train(data=dataset.location+"/data.yaml", epochs=1,imgsz=640)
-metrics = model.val()'''
+metrics = model.val()
