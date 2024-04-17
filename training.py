@@ -16,9 +16,9 @@ except:
 '''
 os.listdir("/var/jenkins_home/workspace/")
 print('\n')
-os.listdir("/var/jenkins_home/workspace/RobotHumanYOLOv8@2/")
+#os.listdir("/var/jenkins_home/workspace/RobotHumanYOLOv8@2/")
 print('\n')
-os.listdir("/var/jenkins_home/RobotHumanYOLOv8@2/robot-human-detection-1")
+#os.listdir("/var/jenkins_home/RobotHumanYOLOv8@2/robot-human-detection-1")
 '''
 filename = "/var/jenkins_home/workspace/RobotHumanYOLOv8@2/robot-human-detection-1/data.yaml"
 with open(filename, "r") as f:
