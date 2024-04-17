@@ -18,7 +18,7 @@ print(os.listdir("/var/jenkins_home/workspace/"))
 print('\n')
 print(os.listdir("/var/jenkins_home/workspace/RobotHumanYOLOv8/"))
 print('\n')
-os.listdir("/var/jenkins_home/RobotHumanYOLOv8/robot-human-detection-1")
+print(os.listdir("/var/jenkins_home/RobotHumanYOLOv8/robot-human-detection-1"))
 
 filename = "/var/jenkins_home/workspace/RobotHumanYOLOv8/robot-human-detection-1/data.yaml"
 with open(filename, "r") as f:
