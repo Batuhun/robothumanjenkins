@@ -14,7 +14,7 @@ try:
 except:
     print('error unzipping')
 '''
-os.listdir("/var/jenkins_home/workspace/")
+print(os.listdir("/var/jenkins_home/workspace/"))
 print('\n')
 #os.listdir("/var/jenkins_home/workspace/RobotHumanYOLOv8@2/")
 print('\n')
