@@ -16,7 +16,7 @@ except:
 '''
 print(os.listdir("/var/jenkins_home/workspace/"))
 print('\n')
-#os.listdir("/var/jenkins_home/workspace/RobotHumanYOLOv8@2/")
+print(os.listdir("/var/jenkins_home/workspace/RobotHumanYOLOv8/"))
 print('\n')
 #os.listdir("/var/jenkins_home/RobotHumanYOLOv8@2/robot-human-detection-1")
 '''
