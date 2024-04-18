@@ -1,4 +1,4 @@
-pipeline {
+ pipeline {
     agent {
         docker {
             image 'python:3.10-slim' 
@@ -14,7 +14,7 @@ pipeline {
                 echo "Building.."
                 sh '''
                 pip install zipfile36
-                pip install ultralytics
+                pip3 install --upgrade ultralytics
                 pip install roboflow 
                 '''
             }
