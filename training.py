@@ -4,7 +4,7 @@ import os
 import zipfile
 
 rf = Roboflow(api_key="tcoKTgvDJQbxwi8pIzeg")
-project = rf.workspace("alex-hyams-cosqx").project("dollar-bill-detection")
+project = rf.workspace("alex-hyams-cosqx").project("dollar-bill-detection")#dataset névtől függ mit kell kibontani
 version = project.version(24)
 dataset = version.download("yolov8")
 '''
@@ -14,8 +14,8 @@ version = project.version(1)
 dataset = version.download("yolov8")
 '''
 try:
-    with zipfile.ZipFile('/var/jenkins_home/workspace/RobotHumanYOLOv8/robot-human-detection-1/roboflow.zip', 'r') as zip_ref:
-        zip_ref.extractall('/var/jenkins_home/workspace/RobotHumanYOLOv8/robot-human-detection-1')
+    with zipfile.ZipFile('/var/jenkins_home/workspace/RobotHumanYOLOv8/Dollar-Bill-Detection-24/roboflow.zip', 'r') as zip_ref:
+        zip_ref.extractall('/var/jenkins_home/workspace/RobotHumanYOLOv8/Dollar-Bill-Detection-24')
 except:
     print('error unzipping')
 
@@ -23,9 +23,9 @@ print(os.listdir("/var/jenkins_home/workspace/"))
 print('\n')
 print(os.listdir("/var/jenkins_home/workspace/RobotHumanYOLOv8/"))
 print('\n')
-print(os.listdir("/var/jenkins_home/workspace/RobotHumanYOLOv8/robot-human-detection-1"))
+print(os.listdir("/var/jenkins_home/workspace/RobotHumanYOLOv8/Dollar-Bill-Detection-24"))
 
-filename = "/var/jenkins_home/workspace/RobotHumanYOLOv8/robot-human-detection-1/data.yaml"
+filename = "/var/jenkins_home/workspace/RobotHumanYOLOv8/Dollar-Bill-Detection-24/data.yaml"
 with open(filename, "r") as f:
     lines = f.readlines()
 with open(filename, "w") as f:
