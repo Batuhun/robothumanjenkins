@@ -9,7 +9,6 @@ def hello(a,b):
 
 
 a = sys.argv[1]
-b = sys.argv[2]
 hello(a, b)
 '''
 rf = Roboflow(api_key="tcoKTgvDJQbxwi8pIzeg")
