@@ -2,6 +2,15 @@ from ultralytics import YOLO
 from roboflow import Roboflow
 import os
 import zipfile
+import sys
+
+def hello(a,b):
+    print ("hello and that's your sum:", a + b)
+
+
+a = sys.argv[1]
+b = sys.argv[2]
+hello(a, b)
 
 rf = Roboflow(api_key="tcoKTgvDJQbxwi8pIzeg")
 project = rf.workspace("alex-hyams-cosqx").project("dollar-bill-detection")#dataset névtől függ mit kell kibontani

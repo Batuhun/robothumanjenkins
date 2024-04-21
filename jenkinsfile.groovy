@@ -5,6 +5,9 @@
             args '-u root:root'
         }
     }
+    parameters {
+  text defaultValue: 'alma fa', description: 'leírás valami', name: 'parameters'
+    }
     triggers {
             pollSCM '* * * * *'
     }
@@ -23,7 +26,7 @@
             steps {
                 echo "Testing.."
                 sh '''
-                python3 training.py
+                python3 training.py ${params.parameters}
                 '''
             }
         }
