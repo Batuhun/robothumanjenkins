@@ -4,12 +4,12 @@ import os
 import zipfile'''
 import sys
 
-def hello(a,b):
-    print ("hello and that's your sum:", a + b)
+def hello(a):
+    print ("hello and that's your sum:", a )
 
 
 a = sys.argv[1]
-hello(a, b)
+hello(a)
 '''
 rf = Roboflow(api_key="tcoKTgvDJQbxwi8pIzeg")
 project = rf.workspace("alex-hyams-cosqx").project("dollar-bill-detection")#dataset névtől függ mit kell kibontani
