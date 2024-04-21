@@ -2,14 +2,9 @@
 from roboflow import Roboflow
 import os
 import zipfile'''
-import sys
-
-def hello(a):
-    print ("hello and that's your sum:", a )
-
-
-a = sys.argv[1]
-hello(a)
+import os
+a = os.getenv("parameters")
+print(a)
 '''
 rf = Roboflow(api_key="tcoKTgvDJQbxwi8pIzeg")
 project = rf.workspace("alex-hyams-cosqx").project("dollar-bill-detection")#dataset névtől függ mit kell kibontani
