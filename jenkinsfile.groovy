@@ -15,16 +15,11 @@
         stage('Build') {
             steps {
                 echo "Building.."
-                sh '''
-                pip install zipfile36
-                pip3 install --upgrade ultralytics
-                pip install roboflow 
-                '''
             }
         }
         stage('Test') {
             steps {
-                echo "Testing.."
+                echo "Testing.. ${params.parameters}"
                 sh '''
                 python3 training.py ${params.parameters}
                 '''
