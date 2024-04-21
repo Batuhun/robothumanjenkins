@@ -21,7 +21,7 @@
             steps {
                 echo "Testing.. ${params.parameters}"
                 sh '''
-                python3 training.py params.parameters
+                python3 training.py "${params.parameters}"
                 '''
             }
         }
