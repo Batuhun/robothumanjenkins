@@ -19,9 +19,9 @@
         }
         stage('Test') {
             steps {
-                echo "Testing.. ${params.parameters}"
+                echo "Testing.."
                 sh '''
-                python3 training.py "${params.parameters}"
+                python3 training.py
                 '''
             }
         }
