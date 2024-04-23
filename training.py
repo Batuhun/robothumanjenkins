@@ -14,23 +14,23 @@ dropout = [float(x) for x in os.getenv("dropout").split(',')]
 imgsz = int(os.getenv("imgsz"))
 dataset_api = os.getenv("dataset_api")
 dataset_name = os.getenv("dataset_name")
-version = int(os.getenv("version"))
+versionstr = int(os.getenv("version"))
 workspace = os.getenv("workspace")
 average_result_value = float(os.getenv("average_result_value"))
 
 rf = Roboflow(api_key=dataset_api)
 project = rf.workspace(workspace).project(dataset_name.lower())#dataset névtől függ mit kell kibontani
-version = project.version(version)
+version = project.version(versionstr)
 dataset = version.download("yolov8")
 
 try:
-    with zipfile.ZipFile('/var/jenkins_home/workspace/RobotHumanYOLOv8/'+dataset_name+'-'+str(version)+'/roboflow.zip', 'r') as zip_ref:
-        zip_ref.extractall('/var/jenkins_home/workspace/RobotHumanYOLOv8/'+dataset_name+'-'+str(version))
+    with zipfile.ZipFile('/var/jenkins_home/workspace/RobotHumanYOLOv8/'+dataset_name+'-'+str(versionstr)+'/roboflow.zip', 'r') as zip_ref:
+        zip_ref.extractall('/var/jenkins_home/workspace/RobotHumanYOLOv8/'+dataset_name+'-'+str(versionstr))
 except:
     print('error unzipping')
 
 
-filename = '/var/jenkins_home/workspace/RobotHumanYOLOv8/'+dataset_name+'-'+str(version)+'/data.yaml'
+filename = '/var/jenkins_home/workspace/RobotHumanYOLOv8/'+dataset_name+'-'+str(versionstr)+'/data.yaml'
 with open(filename, "r") as f:
     lines = f.readlines()
 with open(filename, "w") as f:
