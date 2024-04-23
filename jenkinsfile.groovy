@@ -8,19 +8,32 @@
     parameters {
   string defaultValue: '0.0001,0.001,0.01', name: 'learning_rates', trim: true
   string defaultValue: '32,64,128', name: 'batch_sizes', trim: true
+  string defaultValue: 'Adam,SGD,AdamW', name: 'optimizers', trim: true
+  string defaultValue: '30,50,150', name: 'epochs', trim: true
+  string defaultValue: 'yolov8n,yolov8m', name: 'network_architectures', trim: true
+  string defaultValue: '0.0,0.2,0.4', name: 'dropout', trim: true
+  string defaultValue: '640', name: 'imszg', trim: true
+  string defaultValue: 'tcoKTgvDJQbxwi8pIzeg', name: 'dataset_api', trim: true
+  string defaultValue: 'Dollar-Bill-Detection-24', name: 'dataset_name', trim: true
+
     }
     triggers {
             pollSCM '* * * * *'
     }
     stages {
-        stage('Build') {
+        stage('Enviroment setup') {
             steps {
-                echo "Building.."
+                echo "Enviroment setup.."
+                sh '''
+                pip install zipfile36
+                pip install ultralytics==8.0.196
+                pip install roboflow 
+                '''
             }
         }
-        stage('Test') {
+        stage('Training') {
             steps {
-                echo "Testing.."
+                echo "Training.."
                 sh '''
                 python3 training.py
                 '''
