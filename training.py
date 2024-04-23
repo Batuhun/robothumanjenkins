@@ -75,16 +75,16 @@ for parameters in parameter_grid:
 
     
     # Save the results
-    if(metrics.results_dict.get(('metrics/precision(B)')+ metrics.results_dict.get('metrics/recall(B)')+ metrics.results_dict.get('metrics/mAP50(B)')+ metrics.results_dict.get('metrics/mAP50-95(B)')+ metrics.results_dict.get('fitness'))/5>avg_res):
+    if((metrics.results_dict.get('metrics/precision(B)')+ metrics.results_dict.get('metrics/recall(B)')+ metrics.results_dict.get('metrics/mAP50(B)')+ metrics.results_dict.get('metrics/mAP50-95(B)')+ metrics.results_dict.get('fitness'))/5>avg_res):
         result = {'learning_rate': learning_rate,
                 'batch_size': batch_size,
                 'optimizer': optimizer,
                 'num_epochs': num_epochs,
                 'architecture': architecture,
                 'dropout': dropout}
-        avg_res=metrics.results_dict.get(('metrics/precision(B)')+ metrics.results_dict.get('metrics/recall(B)')+ metrics.results_dict.get('metrics/mAP50(B)')+ metrics.results_dict.get('metrics/mAP50-95(B)')+ metrics.results_dict.get('fitness'))/5
+        avg_res=(metrics.results_dict.get('metrics/precision(B)')+ metrics.results_dict.get('metrics/recall(B)')+ metrics.results_dict.get('metrics/mAP50(B)')+ metrics.results_dict.get('metrics/mAP50-95(B)')+ metrics.results_dict.get('fitness'))/5
     # Stop
-    if(metrics.results_dict.get(('metrics/precision(B)')+ metrics.results_dict.get('metrics/recall(B)')+ metrics.results_dict.get('metrics/mAP50(B)')+ metrics.results_dict.get('metrics/mAP50-95(B)')+ metrics.results_dict.get('fitness'))/5>average_result_value):
+    if((metrics.results_dict.get('metrics/precision(B)')+ metrics.results_dict.get('metrics/recall(B)')+ metrics.results_dict.get('metrics/mAP50(B)')+ metrics.results_dict.get('metrics/mAP50-95(B)')+ metrics.results_dict.get('fitness'))/5>average_result_value):
         break
 
 print(result)
