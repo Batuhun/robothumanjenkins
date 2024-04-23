@@ -31,6 +31,7 @@
                 pip install zipfile36
                 pip install ultralytics==8.0.196
                 pip install roboflow 
+                pip install -U scikit-learn
                 '''
             }
         }
