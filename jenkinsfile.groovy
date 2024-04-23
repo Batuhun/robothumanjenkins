@@ -6,7 +6,8 @@
         }
     }
     parameters {
-  text defaultValue: 'alma fa', description: 'leírás valami', name: 'parameters'
+  string defaultValue: '0.0001,0.001,0.01', name: 'learning_rates', trim: true
+  string defaultValue: '32,64,128', name: 'batch_sizes', trim: true
     }
     triggers {
             pollSCM '* * * * *'
