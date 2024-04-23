@@ -12,7 +12,7 @@
   string defaultValue: '30,50,150', name: 'epochs', trim: true
   string defaultValue: 'yolov8n,yolov8m', name: 'network_architectures', trim: true
   string defaultValue: '0.0,0.2,0.4', name: 'dropout', trim: true
-  string defaultValue: '640', name: 'imszg', trim: true
+  string defaultValue: '640', name: 'imgsz', trim: true
   string defaultValue: 'tcoKTgvDJQbxwi8pIzeg', name: 'dataset_api', trim: true
   string defaultValue: 'Dollar-Bill-Detection', name: 'dataset_name', trim: true
   string defaultValue: '24', name: 'version', trim: true
