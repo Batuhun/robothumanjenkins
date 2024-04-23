@@ -5,18 +5,18 @@ import zipfile
 from sklearn.model_selection import ParameterGrid
 
 avg_res=0.0
-learning_rates = [int(x) for x in os.getenv("learning_rates").split(',')]
+learning_rates = [float(x) for x in os.getenv("learning_rates").split(',')]
 batch_sizes = [int(x) for x in os.getenv("batch_sizes").split(',')]
 optimizers = os.getenv("optimizers").split(',')
 epochs = [int(x) for x in os.getenv("epochs").split(',')]
 network_architectures = os.getenv("network_architectures").split(',')
-dropout = [int(x) for x in os.getenv("dropout").split(',')]
+dropout = [float(x) for x in os.getenv("dropout").split(',')]
 imgsz = int(os.getenv("imgsz"))
 dataset_api = os.getenv("dataset_api")
 dataset_name = os.getenv("dataset_name")
 version = int(os.getenv("version"))
 workspace = os.getenv("workspace")
-average_result_value = int(os.getenv("average_result_value"))
+average_result_value = float(os.getenv("average_result_value"))
 
 rf = Roboflow(api_key=dataset_api)
 project = rf.workspace(workspace).project(dataset_name.lower())#dataset névtől függ mit kell kibontani
