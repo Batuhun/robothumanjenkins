@@ -15,8 +15,9 @@
   string defaultValue: '640', name: 'imszg', trim: true
   string defaultValue: 'tcoKTgvDJQbxwi8pIzeg', name: 'dataset_api', trim: true
   string defaultValue: 'Dollar-Bill-Detection', name: 'dataset_name', trim: true
-  string defaultValue: '24', name: 'versiom', trim: true
+  string defaultValue: '24', name: 'version', trim: true
   string defaultValue: 'alex-hyams-cosqx', name: 'workspace', trim: true
+  string defaultValue: '0.8', name: 'average_result_value', trim: true
 
     }
     triggers {
