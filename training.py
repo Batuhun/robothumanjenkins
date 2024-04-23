@@ -24,13 +24,13 @@ version = project.version(version)
 dataset = version.download("yolov8")
 
 try:
-    with zipfile.ZipFile('/var/jenkins_home/workspace/RobotHumanYOLOv8/'+dataset_name+'-'+version+'/roboflow.zip', 'r') as zip_ref:
-        zip_ref.extractall('/var/jenkins_home/workspace/RobotHumanYOLOv8/'+dataset_name+'-'+version)
+    with zipfile.ZipFile('/var/jenkins_home/workspace/RobotHumanYOLOv8/'+dataset_name+'-'+str(version)+'/roboflow.zip', 'r') as zip_ref:
+        zip_ref.extractall('/var/jenkins_home/workspace/RobotHumanYOLOv8/'+dataset_name+'-'+str(version))
 except:
     print('error unzipping')
 
 
-filename = '/var/jenkins_home/workspace/RobotHumanYOLOv8/'+dataset_name+'-'+version+'/data.yaml'
+filename = '/var/jenkins_home/workspace/RobotHumanYOLOv8/'+dataset_name+'-'+str(version)+'/data.yaml'
 with open(filename, "r") as f:
     lines = f.readlines()
 with open(filename, "w") as f:
